@@ -4,6 +4,7 @@ import Navbar from "./ui/(main)/navbar"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { Providers } from "@/redux/provider"
+import StyledComponentsRegistry from './registry'
 config.autoAddCss = false
 
 // const inter = Inter({ subsets: ["latin"] })
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kanit.className}>
-        <Providers>
-          <Navbar />
-          {children}
-        </Providers>
+        <StyledComponentsRegistry>
+          <Providers>
+            <Navbar />
+            {children}
+          </Providers>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
