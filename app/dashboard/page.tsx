@@ -1,4 +1,7 @@
+"use client"
+
 import styles from "./page.module.css"
+import styled from "styled-components"
 
 const DashBoard = () => {
   return (
@@ -28,9 +31,18 @@ const DashBoard = () => {
             <div className={styles.tokenName}></div>
           </div>
         </div>
+        <Applayout>이정민</Applayout>
       </div>
     </div>
   )
 }
+
+const Applayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 16px;
+  flex: 1;
+`
 
 export default DashBoard
