@@ -1,48 +1,147 @@
-"use client"
+import AmountInfo from "./content/amountInfo"
+import ListWrap from "./content/listWrap"
+import { Header, Subject, TokensWrap, Total } from "./styled"
 
-import styles from "./page.module.css"
-import styled from "styled-components"
+const tokenItem = [
+  {
+    index: "#",
+    price: "Price",
+    name: "Name",
+    TVL: "TVL",
+    TotalVol: "TotalVol",
+    color: "#7645d9",
+    img: [],
+  },
+  {
+    index: "1",
+    price: "1.20",
+    name: "ASD",
+    TVL: "2.19M",
+    TotalVol: "1.04K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+  {
+    index: "1",
+    price: "1.20",
+    name: "ASD",
+    TVL: "2.19M",
+    TotalVol: "1.04K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+  {
+    index: "2",
+    price: "1.20",
+    name: "ASD",
+    TVL: "2.19M",
+    TotalVol: "1.04K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+  {
+    index: "3",
+    price: "1.20",
+    name: "ASD",
+    TVL: "2.19M",
+    TotalVol: "1.04K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+  {
+    index: "4",
+    price: "1.20",
+    name: "ASD",
+    TVL: "2.19M",
+    TotalVol: "1.04K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+]
+
+const pairItem = [
+  {
+    index: "#",
+    name: "Pair",
+    price: "",
+    TVL: "TVL",
+    TotalVol: "TotalVol",
+    color: "#7645d9",
+    img: [""],
+  },
+  {
+    index: "1",
+    name: "USDT/ASD",
+    price: "",
+    TVL: "38.16M",
+    TotalVol: "36.45K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x55d398326f99059fF775485246999027B3197955.png",
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+  {
+    index: "2",
+    name: "ETH/ASD",
+    price: "",
+    TVL: "38.16M",
+    TotalVol: "36.45K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x55d398326f99059fF775485246999027B3197955.png",
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+  {
+    index: "3",
+    name: "ARB/ASD",
+    price: "",
+    TVL: "38.16M",
+    TotalVol: "36.45K",
+    color: "#280d5f",
+    img: [
+      "https://tokens.pancakeswap.finance/images/0x55d398326f99059fF775485246999027B3197955.png",
+      "https://tokens.pancakeswap.finance/images/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png",
+    ],
+  },
+]
 
 const DashBoard = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.subject}>
+    <>
+      <Header>
+        <Subject>
           <h2>CookieSwap Info & Analytics</h2>
-        </div>
-        <div className={styles.total}>
-          <div className={styles.amount}>
-            <h3>Liquidity</h3>
-            <h1>64,146,968.8 ASD</h1>
-          </div>
-          <div className={styles.staking}>
-            <h3>Total amount of Staking</h3>
-            <h1>45,471,451 ASD</h1>
-          </div>
-        </div>
-      </div>
-      <div className={styles.tokens}>
-        <div className={styles.subject}>
+        </Subject>
+        <Total>
+          <AmountInfo></AmountInfo>
+        </Total>
+      </Header>
+      <TokensWrap>
+        <Subject>
           <h2>Top Tokens</h2>
-        </div>
-        <div className={styles.tokenList}>
-          <div className={styles.info}>
-            <div className={styles.numbering}>#</div>
-            <div className={styles.tokenName}></div>
-          </div>
-        </div>
-        <Applayout>이정민</Applayout>
-      </div>
-    </div>
+        </Subject>
+        <ListWrap tokenItem={tokenItem}></ListWrap>
+      </TokensWrap>
+      <TokensWrap>
+        <Subject>
+          <h2>Top Pairs</h2>
+        </Subject>
+        <ListWrap tokenItem={pairItem}></ListWrap>
+      </TokensWrap>
+    </>
   )
 }
-
-const Applayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0 16px;
-  flex: 1;
-`
 
 export default DashBoard
