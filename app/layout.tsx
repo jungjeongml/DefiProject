@@ -4,6 +4,7 @@ import Navbar from "./ui/(main)/navbar"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { Providers } from "@/redux/provider"
+
 import StyledComponentsRegistry from './registry'
 config.autoAddCss = false
 
