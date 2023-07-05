@@ -12,7 +12,7 @@ const ItemWrapper = ({
   level,
 }: {
   text: string
-  setOpen: (value: boolean) => void
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setText: (value: string) => void
   level: string[]
 }) => {
@@ -26,16 +26,12 @@ const ItemWrapper = ({
     } else {
       setText("Token level change B -> C")
     }
+    setOpen(false)
   }
 
   return (
     <>
-      <Item
-        ref={itemRef}
-        onClick={() => {
-          clickHander()
-        }}
-      >
+      <Item ref={itemRef} onClick={clickHander}>
         {text}
         {text === "Token level change" && (
           <>

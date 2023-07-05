@@ -1,23 +1,32 @@
-import { Amount, IsHave, Line, Ticket } from "../styled/page.styled"
+import {
+  Amount,
+  Cost,
+  CostWrapper,
+  HaveAmount,
+  HaveTitle,
+  IsHave,
+  Line,
+  Ticket,
+} from "../styled/page.styled"
 
 const HaveBox = () => {
   return (
     <>
       <IsHave>
         <Amount>
-          <div>Current ASD</div>
-          <div>
-            <div>0 ASD</div>
-            <p>등록 비용 500ASD</p>
-          </div>
+          <HaveTitle>Current ASD</HaveTitle>
+          <CostWrapper>
+            <HaveAmount>0 ASD</HaveAmount>
+            <Cost>cost: 500ASD</Cost>
+          </CostWrapper>
         </Amount>
         <Line></Line>
         <Ticket>
-          <div>Current Ticket</div>
-          <div>
-            <div>0 vKSP</div>
-            <p>최소 보유 투표권 vKSP</p>
-          </div>
+          <HaveTitle>Current Ticket</HaveTitle>
+          <CostWrapper>
+            <HaveAmount>0 vKSP</HaveAmount>
+            <Cost>min Vote: vKSP</Cost>
+          </CostWrapper>
         </Ticket>
       </IsHave>
     </>
