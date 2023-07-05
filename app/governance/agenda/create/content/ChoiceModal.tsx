@@ -5,11 +5,15 @@ import { ReactNode, useCallback, useEffect, useRef } from "react"
 import ItemWrapper from "./ItemWrapper"
 
 const ChoiceModal = ({
+  open,
   setOpen,
   setText,
+  onClick,
 }: {
-  setOpen: (value: boolean) => void
+  open: boolean
+  onClick: () => void
   setText: (value: any) => void
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null)
 
@@ -17,7 +21,7 @@ const ChoiceModal = ({
     (e: any) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         console.log("ddd")
-        setOpen(false)
+        onClick()
       }
     },
     [wrapperRef.current]
