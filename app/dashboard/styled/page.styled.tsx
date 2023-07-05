@@ -26,7 +26,7 @@ export const Total = styled.div`
 `
 
 export const Amount = styled.div`
-  border: 1px solid #000;
+  border: 1px solid #e7e3eb;
   border-radius: 24px;
   background: #fff;
   padding: 24px;
