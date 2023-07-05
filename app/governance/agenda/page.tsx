@@ -20,6 +20,7 @@ import {
 } from "./styled"
 
 import ButtonWrap from "./content/buttonWrap"
+import { useRouter } from "next/navigation"
 
 const list = [
   {
@@ -41,6 +42,7 @@ const list = [
 ]
 
 const Agenda = () => {
+  const router = useRouter()
   return (
     <>
       <HfLayout>
@@ -59,7 +61,12 @@ const Agenda = () => {
         <BoardSubject>Proposals</BoardSubject>
         <Board>
           {list.map((item) => (
-            <Item>
+            <Item
+              key={item.index}
+              onClick={() => {
+                router.push(`/governance/agenda/${item.index}`)
+              }}
+            >
               <Index>{item.index}</Index>
               <ItemSubject>{item.subject}</ItemSubject>
               {item.progress === "true" ? (
