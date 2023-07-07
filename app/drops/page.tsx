@@ -1,7 +1,13 @@
-import styles from "./page.module.css"
+import DropBody from "./content/body"
+import Header from "./content/header"
 
 const Drop = () => {
-  return <div className={styles.container}>drop</div>
+  return (
+    <>
+      <Header />
+      <DropBody />
+    </>
+  )
 }
 
 export default Drop
