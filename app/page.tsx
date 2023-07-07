@@ -28,7 +28,7 @@ const Home = () => {
         ></path>
       </svg>
       <SecondContent />
-      <ThirdContent />
+      {/* <ThirdContent /> */}
       <Footer />
     </div>
   )
